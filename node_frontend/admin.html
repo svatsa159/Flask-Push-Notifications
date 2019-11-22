@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="http://malsup.github.com/jquery.form.js"></script> 
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Push Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+    <script src="admin.js"></script>
+    <script src="localforage.min.js"></script>
+    
+</head>
+<body>
+        Admin Panel!!!!!
+        <input type="text" name="message" id="not">
+        <button onclick="notify_all()">Notify All</button>
+</body>
+<script>
+    // function upload(){
+    //     $("#theForm").ajaxSubmit({url: '127.0.0.1:8000/postdata/', type: 'POST'});
+    // }
+    function change(){
+        $.ajax({
+
+url : 'http://192.168.2.158:8001/change_data/',
+type : 'GET',
+success : function(data) {              
+   console.log(data);
+   
+},
+
+});
+    }
+    
+</script>
+</html>
+

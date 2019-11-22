@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    $.ajax({
+
+url : 'http://192.168.2.158:8001/getdata/',
+type : 'GET',
+success : function(data) {              
+   jso=JSON.parse(data)
+   if(jso.data==1){
+    var img = $('<img id="image_id">');
+    img.attr('src', 'data:image/png;base64,' + jso.image);
+    img.attr('style','width:50vw;height:auto')
+    img.appendTo('body');
+   }
+   
+},
+
+});
+</script>
+</html>
