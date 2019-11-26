@@ -8,19 +8,20 @@ function saveAndRedirect(){
         // console.log(err);
     });
     setTimeout(function(){
-        $.ajax({
-            url: 'http://192.168.2.158:8001/log_alert/',
-            type: 'POST',
-            data: JSON.stringify({"logged_in":user}),
-            success: function(data) {
-                // alert('success');
-                
-            }
-        });
+        
         if(user=="admin"){
             window.location.href="/admin.html";
         }
         else{
+            $.ajax({
+                url: 'http://192.168.2.158:8001/log_alert/',
+                type: 'POST',
+                data: JSON.stringify({"logged_in":user}),
+                success: function(data) {
+                    // alert('success');
+                    
+                }
+            });
             window.location.href="/process.html";
         }
         
